@@ -19,8 +19,6 @@ android:
     - platform-tools
     - android-27
     - build-tools-27.1.0
-    # needed for the support annotations
-#    - extra-android-m2repository
 
 #script:
 #  - mvn help:all-profiles
