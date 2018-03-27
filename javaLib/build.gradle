@@ -1,9 +1,10 @@
 apply plugin: 'java-library'
+apply from: "${rootDir}/checkerframework.gradle"
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.google.code.findbugs:jsr305:3.0.2'
 }
 
-sourceCompatibility = "1.7"
-targetCompatibility = "1.7"
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
