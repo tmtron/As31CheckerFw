@@ -20,5 +20,5 @@ android:
     - android-27
     - build-tools-27.1.0
 
-#script:
-#  - mvn help:all-profiles
+script:
+  - gradlew clean check assemble
