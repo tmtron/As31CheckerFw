@@ -17,15 +17,18 @@ android:
   components:
     - tools
     - platform-tools
-    - android-27
-    - build-tools-27.1.0
 
 licenses:
   - 'android-.+'
   - 'android-.+'
   - 'intel-android.+'
 
+# another workaround for newer licensing issue
+# - https://stackoverflow.com/a/47726910/6287240
+# - https://github.com/travis-ci/travis-ci/issues/6555#issuecomment-282635361
 before_install:
+- yes | sdkmanager "platforms;android-27"
+- yes | build-tools-27.1.0
  - chmod +x gradlew
 
 script:
