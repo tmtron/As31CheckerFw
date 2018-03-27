@@ -3,39 +3,43 @@
 ///
 
 repositories {
-  mavenCentral()
+    mavenCentral()
 }
 
 configurations {
-  checkerFrameworkCheckerJar {
-    description = 'the Checker Framework, including the Type Annotations compiler'
-  }
+    checkerFrameworkCheckerJar {
+        description = 'the Checker Framework, including the Type Annotations compiler'
+    }
 
-  checkerFrameworkAnnotatedJDK {
-    description = 'a copy of JDK classes with Checker Framework type qualifers inserted'
-  }
+    checkerFrameworkAnnotatedJDK {
+        description = 'a copy of JDK classes with Checker Framework type qualifers inserted'
+    }
 }
 
 // Checker Framework from Maven Central
 dependencies {
-  ext.checkerFrameworkVersion = '2.4.0'
-  checkerFrameworkAnnotatedJDK "org.checkerframework:jdk8:${checkerFrameworkVersion}"
-  checkerFrameworkCheckerJar "org.checkerframework:checker:${checkerFrameworkVersion}"
-  compile "org.checkerframework:checker-qual:${checkerFrameworkVersion}"
+    ext.checkerFrameworkVersion = '2.4.0'
+    checkerFrameworkAnnotatedJDK "org.checkerframework:jdk8:${checkerFrameworkVersion}"
+    checkerFrameworkCheckerJar "org.checkerframework:checker:${checkerFrameworkVersion}"
+    /* NOTE: we must NOT use compile or api, because then the checker-qual jar would end up in the android-classpath:
+     * ..checker-qual-2.4.0.jar: Error: Invalid package reference in library; not included in Android: java.awt.image.
+     * Referenced from org.checkerframework.checker.signedness.SignednessUtil. [InvalidPackage]
+     */
+    implementation "org.checkerframework:checker-qual:${checkerFrameworkVersion}"
 }
 // To typecheck only the current project's main source set (in a multi-project build)
 compileJava {
-  doFirst {
-    // note: we must explicitly use .toString(), otherwise we get this error (gradle 4.6):
-    //       org.codehaus.groovy.runtime.GStringImpl cannot be cast to java.lang.String
-    options.compilerArgs = [
-        '-processorpath', "${configurations.checkerFrameworkCheckerJar.asPath}".toString(),
-        '-processor', 'org.checkerframework.checker.nullness.NullnessChecker',
-        '-Xmaxerrs', '10000',
-        '-Xmaxwarns', '10000',
-        // '-Awarns',      // turn Checker Framework errors into warnings
-        '-AcheckPurityAnnotations',
-        "-Xbootclasspath/p:${configurations.checkerFrameworkAnnotatedJDK.asPath}".toString()
-    ]
-  }
+    doFirst {
+        // note: we must explicitly use .toString(), otherwise we get this error (gradle 4.6):
+        //       org.codehaus.groovy.runtime.GStringImpl cannot be cast to java.lang.String
+        options.compilerArgs = [
+                '-processorpath', "${configurations.checkerFrameworkCheckerJar.asPath}".toString(),
+                '-processor', 'org.checkerframework.checker.nullness.NullnessChecker',
+                '-Xmaxerrs', '10000',
+                '-Xmaxwarns', '10000',
+                // '-Awarns',      // turn Checker Framework errors into warnings
+                '-AcheckPurityAnnotations',
+                "-Xbootclasspath/p:${configurations.checkerFrameworkAnnotatedJDK.asPath}".toString()
+        ]
+    }
 }
