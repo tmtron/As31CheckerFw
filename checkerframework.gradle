@@ -26,14 +26,16 @@ dependencies {
 // To typecheck only the current project's main source set (in a multi-project build)
 compileJava {
   doFirst {
+    // note: we must explicitly use .toString(), otherwise we get this error (gradle 4.6):
+    //       org.codehaus.groovy.runtime.GStringImpl cannot be cast to java.lang.String
     options.compilerArgs = [
-        '-processorpath', "${configurations.checkerFrameworkCheckerJar.asPath}",
+        '-processorpath', "${configurations.checkerFrameworkCheckerJar.asPath}".toString(),
         '-processor', 'org.checkerframework.checker.nullness.NullnessChecker',
         '-Xmaxerrs', '10000',
         '-Xmaxwarns', '10000',
         // '-Awarns',      // turn Checker Framework errors into warnings
         '-AcheckPurityAnnotations',
-        "-Xbootclasspath/p:${configurations.checkerFrameworkAnnotatedJDK.asPath}"
+        "-Xbootclasspath/p:${configurations.checkerFrameworkAnnotatedJDK.asPath}".toString()
     ]
   }
 }
