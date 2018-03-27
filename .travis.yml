@@ -18,13 +18,12 @@ android:
     - tools
     - platform-tools
     - android-27
-    - build-tools-27.0.1
+    - build-tools-27.1.0
 
-# workaround for new android versions as suggested here:
-# https://github.com/travis-ci/docs-travis-ci-com/issues/779#issuecomment-282635354
-#install:
-#  - echo y | android update sdk -u -a -t build-tools-27..0
-#  - echo y | android update sdk -u -a -t android-27
+licenses:
+  - 'android-.+'
+  - 'android-.+'
+  - 'intel-android.+'
 
 before_install:
  - chmod +x gradlew
