@@ -1,0 +1,26 @@
+sudo: false
+
+before_cache:
+  - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+    - $HOME/.m2
+
+language: android
+
+#jdk:
+#  - oraclejdk8
+
+android:
+  components:
+    - tools
+    - platform-tools
+    - android-27
+    - build-tools-27.1.0
+    # needed for the support annotations
+#    - extra-android-m2repository
+
+#script:
+#  - mvn help:all-profiles
