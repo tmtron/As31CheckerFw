@@ -12,3 +12,6 @@ class file for java.lang.Class$AnnotationData not found
 class file for java.lang.Class$ReflectionData not found
 ```
 see [checker-framework issue 1916](https://github.com/typetools/checker-framework/issues/1916)
+
+this issue may be resolved with version 2.5.1 - see [comment#1916](https://github.com/typetools/checker-framework/issues/1916#issuecomment-391096577) - but there is a new one: see [branch CheckerFw_2_5_1](https://github.com/tmtron/As31CheckerFw/tree/CheckerFw_2_5_1)
+
