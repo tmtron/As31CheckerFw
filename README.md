@@ -4,7 +4,7 @@ Test usage of checker-framework with an Android Studio 3.1 project
 <!--
  ![] is the markdown syntax to add an image and this is surounded by a link to the travis-ci builds page
 -->
-[![Build Status](https://travis-ci.org/tmtron/As31CheckerFw.svg?label=travis)](https://travis-ci.org/tmtron/As31CheckerFw/builds) 
+[![Build Status](https://travis-ci.org/tmtron/As31CheckerFw.svg?label=travis&branch=CheckerFw_2_5_1)](https://travis-ci.org/tmtron/As31CheckerFw/builds) 
 
 This branch uses checker-framework 2.5.1 - the original issue [checker-framework#1916](https://github.com/typetools/checker-framework/issues/1916) does not show up, instead we see a new one [checker-framework#1990](https://github.com/typetools/checker-framework/pull/1990):
 ``` 
@@ -14,4 +14,4 @@ This branch uses checker-framework 2.5.1 - the original issue [checker-framework
 
 [Full Build Output](https://travis-ci.org/tmtron/As31CheckerFw/builds/383560306)
 
-In **[Branch CheckerFw 2.5.2](https://github.com/tmtron/As31CheckerFw/tree/CheckerFw_2_5_2)** we use verison 2.5.2 where this issue is also fixed.
+In **[Branch CheckerFw 2.5.2](../../tree/CheckerFw_2_5_2)** we use verison 2.5.2 where this issue is also fixed.
