@@ -47,6 +47,7 @@ dependencies {
 
     implementation "org.checkerframework:checker-qual:${checkerFrameworkVersion}"
     annotationProcessor "org.checkerframework:checker:${checkerFrameworkVersion}"
+    testAnnotationProcessor  "org.checkerframework:checker:${checkerFrameworkVersion}"
     checkerFrameworkAnnotatedJDK "org.checkerframework:jdk8:${checkerFrameworkVersion}"	
 }
 
