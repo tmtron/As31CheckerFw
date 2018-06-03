@@ -6,7 +6,7 @@ Test usage of checker-framework with an Android Studio 3.1 project
 -->
 [![Build Status](https://travis-ci.org/tmtron/As31CheckerFw.svg?label=travis)](https://travis-ci.org/tmtron/As31CheckerFw/builds) 
 
-This branch uses version 2.5.1 which works as expected.
+This branch uses version 2.5.2 which works as expected.
 
 Other branches that fail:
 
