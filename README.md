@@ -14,3 +14,4 @@ This branch uses checker-framework 2.5.1 - the original issue [checker-framework
 
 [Full Build Output](https://travis-ci.org/tmtron/As31CheckerFw/builds/383560306)
 
+In **[Branch CheckerFw 2.5.2](https://github.com/tmtron/As31CheckerFw/tree/CheckerFw_2_5_2)** we use verison 2.5.2 where this issue is also fixed.
