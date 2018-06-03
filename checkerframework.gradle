@@ -18,7 +18,6 @@ configurations {
 
 // Checker Framework from Maven Central
 dependencies {
-    ext.checkerFrameworkVersion = '2.4.0'
     checkerFrameworkAnnotatedJDK "org.checkerframework:jdk8:${checkerFrameworkVersion}"
     checkerFrameworkCheckerJar "org.checkerframework:checker:${checkerFrameworkVersion}"
     /* NOTE: we must NOT use compile or api, because then the checker-qual jar would end up in the android-classpath:
