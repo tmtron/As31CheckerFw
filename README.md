@@ -15,7 +15,7 @@ class file for java.lang.Class$ReflectionData not found
 ```
 see [checker-framework issue 1916](https://github.com/typetools/checker-framework/issues/1916)
 
-## [Branch CheckerFw 2.5.1](https://github.com/tmtron/As31CheckerFw/tree/CheckerFw_2_5_1)
+## [Branch CheckerFw 2.5.1](../../tree/CheckerFw_2_5_1)
 
 [Checker-framework issue 1916](https://github.com/typetools/checker-framework/issues/1916) is resolved in version 2.5.1, but there is another issue - [checker-framework#1990](https://github.com/typetools/checker-framework/pull/1990):
 
@@ -24,7 +24,7 @@ see [checker-framework issue 1916](https://github.com/typetools/checker-framewor
 .../checker-qual-2.5.1.jar: Error: Invalid package reference in library; not included in Android: java.awt. Referenced from org.checkerframework.checker.signedness.SignednessUtil. [InvalidPackage]
 ```
 
-## [Branch CheckerFw 2.5.2](https://github.com/tmtron/As31CheckerFw/tree/CheckerFw_2_5_2)
+## [Branch CheckerFw 2.5.2](../../tree/CheckerFw_2_5_2)
 Checker framework 2.5.2 works as expected.
 
 
